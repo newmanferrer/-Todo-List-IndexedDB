@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css?t=1594830431728">
+    <title>Todo List</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container-title">
+        <h1 class="container-title__title">Todo List</h1>
+      </div>
+      <div class="container-form">
+        <form class="container-form__form" id="container-form__form">
+          <input class="container-form__form__input-item" type="text" name="input_item" minlength="1" maxlength="60" required autocomplete="off" placeholder="type a task" id="input-item">
+          <div class="container-form__form__div-colores" id="div-colores">
+            <div class="container-form__form__div-colores__html-div1 div1"></div>
+            <div class="container-form__form__div-colores__html-div2 div2"></div>
+            <div class="container-form__form__div-colores__html-div3 div3"></div>
+          </div>
+          <input class="container-form__form__input-date" type="date" name="input_date" required autocomplete="off" id="input-date">
+          <input class="container-form__form__button" type="submit" name="button" data-action="add" value="+">
+        </form>
+      </div>
+      <div class="container-tareas" id="container-tareas"></div>
+      <div class="container-error" id="container-error">
+        <p class="container-error__parrafo" id="container-error__parrafo"></p>
+      </div>
+    </div>
+    <script src="js/scripts.js?t=1594830431728"></script>
+  </body>
+</html>
