@@ -1,0 +1,280 @@
+.main-container {
+    width: 370px;
+    height: 800px;
+    margin: 2px;
+    background-color: $background-color;
+    border-radius: 10px;
+}
+
+.container-title {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 11%;
+    margin-bottom: 3%;
+    border-bottom: 1px solid $primary-color;
+
+    &__title {
+        padding: 5px;
+        color: $primary-color;
+        font-size: 35px;
+        font-weight: $big-font;
+        text-align: center;
+    }
+}
+
+.container-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    height: 12%;
+    margin: 0% 1% 3%;
+    padding: 0px 7px;
+    background-color: $primary-color;
+    border-radius: 5px;
+
+    &__form {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 15px;
+        grid-row-gap: 16px;
+        /* justify-items: stretch; // alineación horizontal */
+        /* align-items: center; // alineación vertical */
+        place-items: center stretch; // horizontal vertical
+
+        &__input-item {
+            grid-column: 1/5;
+            grid-row: 1/2;
+            color: $primary-color;
+            outline: none;
+            border: 1px solid $text-color;
+            border-radius: 5px;
+        }
+
+        &__input-item::selection {
+            color: $text-color;
+            background-color: $primary-color;
+        }
+        
+        &__div-colores {
+            grid-column: 1/4;
+            grid-row: 2/2;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            &__html-div1,
+            &__html-div2,
+            &__html-div3 {
+                justify-self: center;
+                width: 25px;
+                height: 25px;
+    
+                border: 2px solid $text-color;
+                border-radius: 5px;
+            }
+
+            &__html-div1:hover,
+            &__html-div2:hover,
+            &__html-div3:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+
+            // .container-form__form__div-colores__html-div1--active
+            &__html-div1--active,
+            &__html-div2--active,
+            &__html-div3--active {
+                transform: scale(0.90);
+                border: 3px solid black;
+            }
+
+            &__html-div1 {
+                background-color: $list-item-color-1;
+            }
+    
+            &__html-div2 {
+                background-color: $list-item-color-2;
+            }
+    
+            &__html-div3 {
+                background-color: $list-item-color-3;
+            }
+        }
+
+        &__input-date {
+            grid-column: 4/5;
+            grid-row: 2/3;
+            border: 1px solid $text-color;
+            border-radius: 5px;
+        }
+
+        &__button {
+            align-self: stretch;
+            grid-column: 5/5;
+            grid-row: 1/3;
+
+            color: $primary-color;
+            font-size: 25px;
+            font-weight: $big-font;
+            outline: none;
+            background-color: $text-color;
+            border-radius: 6px;
+        }
+
+        &__button:hover,
+        &__button:focus {
+            cursor: pointer;
+            color: $primary-color;
+            background-color: $background-color;
+            border: 1px solid $text-color;
+        }
+
+        &__button:active {
+            transform: scale(0.95);
+        }
+    }
+}
+
+.container-tareas {
+    width: 100%;
+    height: 65%;
+    margin-bottom: 5%;
+
+
+    &__item {
+        display: grid;
+        grid-template-columns: 59% 22% 5% 5%;
+        justify-items: center;
+        align-items: center;
+        grid-column-gap: 3%;
+        width: 98%;
+        height: 8%;
+        margin: 0px 1% 3%;
+        padding: 0px 1%;
+
+        border: 1px solid $primary-color;
+        border-radius: 5px;
+
+        &__div-span {
+            grid-column: 1/2;
+            justify-self: flex-start;
+    
+            &__span {
+                color: $text-color;
+            }
+        }
+
+        &__div-date {
+            grid-column: 2/3;
+
+            &__date {
+                color: $text-color;
+            }
+        }
+
+        &__div-modificar {
+            grid-column: 3/4;
+            padding: 22%;
+
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+
+            background-color: $text-color;
+
+    
+            &__label-modificar {
+                color: $list-item-color-1;
+                font-weight: $big-font;
+            }
+
+            &__label-modificar:hover {
+                cursor: pointer;
+                font-size: 20px;
+            }
+
+            &__label-modificar:active,
+            &__label-modificar:focus {
+                transform: scale(0.95);
+            }
+        }
+
+        &__div-borrar {
+            grid-column: 4/5;
+            padding: 22%;
+
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+
+            background-color: $text-color;
+
+            &__label-borrar {
+                color: $primary-danger-color;
+                font-weight: $big-font;
+            }
+
+            &__label-borrar:hover {
+                cursor: pointer;
+                font-size: 20px;
+            }
+
+            &__label-borrar:active,
+            &__label-borrar:focus {
+                transform: scale(0.95);
+            }
+        }
+    }
+}
+
+.span-completado {
+    text-decoration: line-through;
+}
+
+.container-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 98%;
+    height: 4%;
+
+    margin: 0% 1%;
+    padding: 0px 5px;
+
+    border-radius: 5px;
+
+    &__parrafo {
+        color: $text-color
+    }
+}
+
+.container-error-visible {
+    background-color: $secundary-danger-color;
+}
+
+/* LARGE SCREEN (768px o Superior)
+=========================================================================== */
+
+@media screen and (min-width: 768px) {
+    .main-container {
+        width: 700px;
+        height: 800px;
+        margin: 2px;
+    }
+
+    .container-tareas {
+        width: 100%;
+        height: 65%;
+        margin-bottom: 2%;
+    }
+
+    .container-error {
+        width: 96%;
+        margin: 0% 2%;
+    }
+}
+
+/* ======================================================================== */
